@@ -1,0 +1,21 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+   <h2><%= @user.username %> profilis</h2>
+
+   <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        
+        <div class="card-content">
+          <h5><b>Email: </b><%= @user.email %></h5>
+          <h5><b>Username: </b><%= @user.username %></h5>
+          <h5><b>User group: </b><%= @user_group.name %></h5>
+
+        </div>
+        <div class="card-action">
+          <%= link_to 'Redaguoti', edit_user_path(@user) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

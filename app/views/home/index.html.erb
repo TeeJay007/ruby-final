@@ -1,0 +1,11 @@
+<div class="container">
+    <div>
+        <p id='notice'><%= notice %></p>
+        <h2>Postai</h2>
+        <div class="collection">
+        <% @posts.each do |post| %>
+            <%= link_to post.title, post_path(post), class: "collection-item" %>
+        <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+        <div class="col s12 m7">
+            <h2><b>Tema: </b><%= @post.title %></h2>
+            <h5><b>Autorius: </b><%= @post.user.username %></h5>
+            <div class="card horizontal">
+            <div class="card-stacked">
+                <div class="card-content topkek">
+                <p><%= @post.content %></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <h2 class="topkek">Temos komentarai</h2>
+        <p id="notice"><%= notice %></p>
+        <ul class="collection">
+            <% @post.comments.each do |comment| %>
+                <li class="collection-item">
+                <b><%= comment.user.username %></b>:  <%= comment.comment %> 
+                
+                <% if comment.user == current_user then %>
+                    <%= form_tag comment_path(comment.id), method: "delete" do %>
+                        <%= submit_tag "Delete", class: "waves-effect waves-light btn-small" %>
+                    <% end %>
+                <% end %>
+                </li>
+            <% end %>
+        </ul>
+        <% if current_user then %>
+            <%= render 'comment_form', comment: @comment %>
+        <% end %>
+    </div>
+</div>

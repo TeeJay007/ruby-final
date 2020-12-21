@@ -1,0 +1,27 @@
+<div class="container">
+    <p id='alert'><%= alert %></p>
+   <h2>Prisijungimas</h2>
+
+   <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-content">
+        <%= form_tag sessions_path do |form| %>
+            <div class='field'>
+              <%= label_tag :email %>
+              <%= text_field_tag :email %>
+            </div>
+            <div class='field'>
+              <%= label_tag :password %>
+              <%= password_field_tag :password %>
+            </div>
+            <div class='actions'>
+              <%= submit_tag 'Login', class: "waves-effect waves-light btn-small"%>
+            </div>
+          <% end %>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
